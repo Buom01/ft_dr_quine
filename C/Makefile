@@ -4,8 +4,9 @@ COMMON_CFLAGS=-Wall -Wextra -Werror
 CFLAGS=$(COMMON_CFLAGS) $(INCLUDES)
 COLLEEN=Colleen
 GRACE=Grace
+SULLY=Sully
 
-all: $(COLLEEN) $(GRACE)
+all: $(COLLEEN) $(GRACE) $(SULLY)
 
 $(COLLEEN): Colleen.c
 	$(CC) $(CFLAGS) -o $@ $^
@@ -20,6 +21,6 @@ clean:
 	echo No object file to clean
 
 fclean:	clean	
-	rm -rf $(COLLEEN) $(GRACE)
+	rm -rf $(COLLEEN) $(GRACE) $(SULLY)
 
 re: fclean all
