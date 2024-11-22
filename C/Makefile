@@ -1,7 +1,5 @@
 CC=clang
-INCLUDES=
-COMMON_CFLAGS=-Wall -Wextra -Werror
-CFLAGS=$(COMMON_CFLAGS) $(INCLUDES)
+CFLAGS=-Wall -Wextra -Werror
 COLLEEN=Colleen
 GRACE=Grace
 SULLY=Sully
@@ -10,10 +8,8 @@ SULLY=Sully
 
 all: $(COLLEEN) $(GRACE) $(SULLY)
 
-%.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
-
-fclean:	clean	
+fclean: clean
 	rm -rf $(COLLEEN) $(GRACE) $(SULLY)
 
-re: fclean all
+re: fclean
+	$(MAKE)
