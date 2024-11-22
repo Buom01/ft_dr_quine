@@ -6,19 +6,12 @@ COLLEEN=Colleen
 GRACE=Grace
 SULLY=Sully
 
+.PHONY: clean
+
 all: $(COLLEEN) $(GRACE) $(SULLY)
-
-$(COLLEEN): Colleen.c
-	$(CC) $(CFLAGS) -o $@ $^
-
-$(GRACE): Grace.c
-	$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
-
-clean:
-	echo No object file to clean
 
 fclean:	clean	
 	rm -rf $(COLLEEN) $(GRACE) $(SULLY)
